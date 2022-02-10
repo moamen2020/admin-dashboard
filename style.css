@@ -30,12 +30,22 @@
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, .5);
 }
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
 
 body {
   background-color: var(--main-bg-color);
   color: var(--main-color);
   font-style: italic;
   font-family: 'Rubik', sans-serif;
+}
+
+body.dark {
+  --main-color : #f5f6fa;
+  --main-bg-color : #23242d;
+  --second-bg-color : #181818;
 }
 
 
@@ -429,4 +439,57 @@ body {
   color: white;
 }
 
+/* Chart */
 
+.chart {
+  height: 500px;
+  margin-top: 20px;
+}
+
+.chart #chart {
+  width: 100%;
+  background-color: var(--main-bg-color);
+  padding: 20px;
+}
+
+
+/* Screen  */
+
+@media (max-width: 1024px) {
+  .row .box {
+    width: 48%;
+  }
+  #chart {
+    padding: 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .row .box {
+    width: 98%;
+  }
+  .table-body .table-row {
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+  }
+  .table-body .table-row > div {
+    text-align: center;
+  }
+  .content .sidebar {
+    position: fixed;
+    z-index: 6;
+    width: 0;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .navbar .input-box {
+    display: none;
+  }
+  .table,
+  .wrapper .row,
+  #chart {
+    padding: 10px 0;
+  }
+}
