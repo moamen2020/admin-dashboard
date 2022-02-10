@@ -324,3 +324,109 @@ body {
   font-size: 17px;
   position: relative;
 }
+
+
+/* Table */
+
+.table {
+  padding: 20px;
+  width: 100%;
+  margin: 10px 0;
+  background-color: var(--main-bg-color);
+  overflow: auto;
+}
+
+.table-body {
+  max-height: 400px;
+}
+
+.table-body .table-row:first-of-type {
+  font-weight: bold;
+  border: none;
+}
+
+
+.table-body .table-row {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(180px, auto));
+  padding: 10px 0px;
+  border-bottom: 2px solid var(--second-bg-color);
+  position: relative;
+}
+
+
+.table-body .table-row:not(:first-of-type)::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 80%;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--site-color);
+}
+
+.table-body .table-row > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-row .status span {
+  padding: 7px 5px;
+  background-color: var(--success-color);
+  color: #FFF;
+  border-radius: 5px;
+}
+
+.table-row .status span.cancel,
+.table-row .actions button:first-of-type {
+  background-color: var(--danger-color);
+}
+
+.table-row .status span.accept,
+.table-row .actions button:last-of-type {
+  background-color: var(--success-color);
+}
+
+
+.table-row .progress .bar {
+  background-color: var(--main-color);
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.table-row .progress .bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background-color: var(--site-color);
+  border-radius: 5px;
+}
+
+.table-row .progress .bar::before {
+  content: "80%";
+  position: absolute;
+  top: -20px;
+}
+
+
+
+
+.table-row .actions button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 5px;
+  color: white;
+}
+
+
